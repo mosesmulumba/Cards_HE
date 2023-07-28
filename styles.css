@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #222;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #333;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+}
+.container .card .imgBox,
+.container .card .textBox{
+    position: relative;
+    width: 100%;
+    display: flex;
+    place-items: center;
+    transition: 0.5s;
+}
+.container .card .content{
+    position: absolute;
+    inset: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+    color: #fff;
+}
+.container .card .imgBox{
+    background: #fff;
+    height: 120px;
+    z-index: 1;
+    transform-origin: top;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.container .card .textBox{
+    background: var(--clr);
+    height: 280px;
+    border-top: 8px solid #333;
+    transform-origin: bottom;
+    transition-delay: 0.5s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: flex-end;
+    position: relative;
+    justify-content: center;
+    /* align-items: center; */
+}
+.container .card .textBox h2{
+    color: #222;
+    font-size: 24px;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    text-transform: capitalize;
+    background: #fff;
+    padding: 5px 25px;
+    border-top: 8px solid #222;
+    border-left: 8px solid #222;
+    border-right: 8px solid #222;
+}
+.container .card:Hover .imgBox{
+    transform: translateY(-100%) rotateX(90deg);
+}
+.container .card:Hover .textBox{
+    transform: translateY(100%) rotateX(90deg);
+}
+.container .card .imgBox::before{
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    width: 144px;
+    height: 74px;
+    background: #fff;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.container .card .imgBox img{
+    border-radius: 10px;
+    background: #fff;
+    z-index: 1;
+    top: 30px;
+    position: relative;
+}
+.container .card .textBox::before{
+    content: '';
+    position: absolute;
+    top: -8px;
+    width: 160px;
+    height: 80px;
+    background: #333;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.container .card .content a{
+    text-decoration: none;
+    background: #17a2b8;
+    color: #fff;
+    height: 50px;
+    width: 180px;
+    font-size: 22px;
+    font-weight: bolder;
+    border-radius: 10px;
+    place-items: center;
+    padding: 10px;
+    letter-spacing: 0.1em;
+    margin-top: 2rem;
+}
+.container .card .content p{
+    font-weight: bolder;
+}
